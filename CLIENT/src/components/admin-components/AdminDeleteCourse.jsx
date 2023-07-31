@@ -18,7 +18,7 @@ export default function AdminDeleteCourse(props) {
       }
     ).then((res) => {
       res.json().then((data) => {
-        Navigate("/admin/courses");
+        Navigate("/");
       });
     });
   });
