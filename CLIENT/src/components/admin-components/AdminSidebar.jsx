@@ -18,7 +18,7 @@ import CoursesBeforeSignin from "./AdminCoursesBeforeSignin";
 
 export default function Sidebar() {
   const token = localStorage.getItem("token");
-  if (token === "") {
+  if (token === "" || token === null || token === 'undefined') {
     return (
       <div
         style={{
@@ -116,7 +116,7 @@ function FixedSidebar(props) {
                   color: "black",
                 }}
               >
-                <Link to={"/admin"} style={{ color: "white" }}>
+                <Link to={"/"} style={{ color: "white" }}>
                   Home
                 </Link>
               </Typography>
@@ -284,7 +284,7 @@ function VariableSidebar() {
                   to={"/"}
                   onClick={() => {
                     localStorage.setItem("token", "");
-                    window.location = "/admin";
+                    window.location = "/";
                   }}
                   style={{
                     color: "white",

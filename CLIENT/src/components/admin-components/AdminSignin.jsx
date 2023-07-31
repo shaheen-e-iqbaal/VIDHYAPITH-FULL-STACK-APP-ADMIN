@@ -143,7 +143,7 @@ function AdminSignin() {
                   setMassage(<Alert severity="error">{data.message}</Alert>);
                 } else {
                   localStorage.setItem("token", data.token);
-                  window.location = "/admin";
+                  window.location = "/";
                 }
               });
             });

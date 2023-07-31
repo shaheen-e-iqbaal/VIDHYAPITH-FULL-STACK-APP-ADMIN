@@ -32,7 +32,7 @@ function AdminAppbar() {
   const closeSignIn = () => {
     setIsSignInOpen(false);
   };
-  if (token === "") {
+  if (token === "" || token === null || token === 'undefined') {
     useEffect(() => {
       setSecondcontent(<AdminSigninButton></AdminSigninButton>);
     }, []);
