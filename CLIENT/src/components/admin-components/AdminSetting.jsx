@@ -111,7 +111,7 @@ export default function AdminSetting() {
             variant="contained"
             onClick={() => {
               if (newpassword != confirmpassword) {
-                setMassage("new password and confirm password must be same");
+                setMassage(<Alert severity="error">New and Confirm Password must be SAME</Alert>);
               } else {
                 const obj = {
                   method: "POST",
@@ -129,7 +129,7 @@ export default function AdminSetting() {
                       console.log(data);
                       localStorage.setItem("token", data.token);
                       //   Navigate("/Signin");
-                      window.location = "/admin";
+                      window.location = "/";
                     } else {
                       setMassage(<Alert severity="error">{data.message}</Alert>);
                     }
