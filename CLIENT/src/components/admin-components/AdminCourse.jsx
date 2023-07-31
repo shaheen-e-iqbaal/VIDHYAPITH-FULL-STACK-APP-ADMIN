@@ -97,7 +97,7 @@ export default function AdminCourse(props){
                     }
                   ).then((res) => {
                     res.json().then((data) => {
-                      window.location = "/admin/courses";
+                      window.location = "/";
                     });
                   });
                 
