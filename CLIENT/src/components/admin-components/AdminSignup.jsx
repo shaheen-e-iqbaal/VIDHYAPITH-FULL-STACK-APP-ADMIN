@@ -134,7 +134,7 @@ function AdminSignup() {
                 res.json().then((data) => {
                   if (data.message === "Admin created succesfully") {
                     localStorage.setItem("token", data.token);
-                    window.location = "/admin";
+                    window.location = "/";
                   } else {
                     setMassage(<Alert severity="error">{data.message}</Alert>);
                   }
