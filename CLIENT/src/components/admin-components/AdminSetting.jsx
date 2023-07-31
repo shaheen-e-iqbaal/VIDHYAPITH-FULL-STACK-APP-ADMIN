@@ -13,6 +13,7 @@ import { Button } from "@mui/material";
 import { Navigate, useNavigate } from "react-router-dom";
 import AdminSignin from "./AdminSignin";
 import AdminAppbar from "./AdminAppbar";
+import Alert from "@mui/material/Alert";
 
 export default function AdminSetting() {
   const token = localStorage.getItem("token");
@@ -122,7 +123,7 @@ export default function AdminSetting() {
                     auth: "bearer " + localStorage.getItem("token"),
                   },
                 };
-                fetch("http://localhost:3000/admin/update", obj).then((res) => {
+                fetch("https://vidhyapith-full-stack-app.vercel.app/admin/update", obj).then((res) => {
                   res.json().then((data) => {
                     if (data.message === "updated succesfully") {
                       console.log(data);
@@ -130,7 +131,7 @@ export default function AdminSetting() {
                       //   Navigate("/Signin");
                       window.location = "/admin";
                     } else {
-                      setMassage(data.message);
+                      setMassage(<Alert severity="error">{data.message}</Alert>);
                     }
                   });
                 });
